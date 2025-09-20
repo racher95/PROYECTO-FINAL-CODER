@@ -34,7 +34,7 @@ body {
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
   /* Ajustar margin para navbar fijo */
-  padding-top: 70px;
+  padding-top: 63px;
 }
 
 /* Container principal */
@@ -70,7 +70,7 @@ main {
     var(--rosa),
     var(--celeste)
   ) !important;
-  padding: 8px 0;
+  padding: 12px 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   position: fixed;
   top: 0;
@@ -84,8 +84,15 @@ main {
   margin: 0 auto;
 }
 
-.navbar-brand .navbar-logo {
-  height: 55px;
+.navbar-brand {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.navbar-logo {
+  height: 80px;
   width: auto;
 }
 
@@ -206,7 +213,7 @@ main {
   }
 
   .navbar-brand .navbar-logo {
-    height: 50px;
+    height: 65px;
   }
 
   .hero-section,
@@ -809,10 +816,6 @@ a:hover {
 
 /* Responsive para móviles */
 @media (max-width: 768px) {
-  body {
-    padding-top: 120px;
-  }
-
   .container,
   .wrap {
     padding: 0 15px;
@@ -896,5 +899,215 @@ a:hover {
   .texto-nosotros p {
     text-align: left;
     font-size: 1rem;
+  }
+}
+
+/* ===== GRID PROMOCIONES CSS GRID PURO ===== */
+.promos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.promo-card {
+  background: var(--blanco);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.promo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.promo-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.promo-card:hover .promo-image img {
+  transform: scale(1.05);
+}
+
+.promo-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--violeta-principal);
+  color: var(--blanco);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.promo-content {
+  padding: 25px;
+}
+
+.promo-content h2 {
+  color: var(--violeta-principal);
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.promo-description {
+  color: var(--texto-gris);
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.promo-price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.old-price {
+  color: var(--texto-gris);
+  text-decoration: line-through;
+  font-size: 0.9rem;
+}
+
+.new-price {
+  color: var(--violeta-oscuro);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.promo-validity {
+  color: var(--rosa);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.promo-content .btn {
+  width: 100%;
+  margin: 0;
+}
+
+/* Responsive para promociones */
+@media (max-width: 768px) {
+  .promos-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .promo-image img {
+    height: 200px;
+  }
+
+  .promo-content {
+    padding: 20px;
+  }
+
+  .promo-content h2 {
+    font-size: 1.2rem;
+  }
+}
+
+/* ===== GALERÍA CSS GRID + BOOTSTRAP MODAL ===== */
+.gallery-section {
+  margin-bottom: 60px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  aspect-ratio: 1;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s ease;
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(110, 57, 183, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-icon {
+  font-size: 2rem;
+  color: white;
+}
+
+/* Testimonios Bootstrap Cards personalizados */
+.testimonials-section {
+  margin-top: 50px;
+}
+
+.testimonial-card-bootstrap {
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card-bootstrap:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-card-bootstrap .card-body {
+  background: linear-gradient(135deg, var(--gris-claro), var(--blanco));
+}
+
+/* Responsive galería */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .gallery-icon {
+    font-size: 1.5rem;
+  }
+
+  .testimonials-section .row > div {
+    margin-bottom: 20px;
   }
 }

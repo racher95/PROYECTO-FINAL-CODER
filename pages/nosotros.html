@@ -4,26 +4,55 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Nosotros – Dulce Estrellita</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
     <!-- Header del sitio -->
     <header class="site-header">
-      <div class="container">
-        <div class="header-content">
-          <a href="../index.html" class="logo">
-            <img src="../img/logo.png" alt="Dulce Estrellita" />
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid px-4">
+          <a class="navbar-brand" href="../index.html">
+            <img
+              src="../img/logo.png"
+              alt="Dulce Estrellita"
+              class="navbar-logo"
+            />
           </a>
-          <nav class="main-nav">
-            <ul>
-              <li><a href="catalogo.html">Catálogo</a></li>
-              <li><a href="promos.html">Promos</a></li>
-              <li><a href="galeria.html">Galería y reseñas</a></li>
-              <li><a href="nosotros.html">Nosotros</a></li>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="catalogo.html">Catálogo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="promos.html">Promos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="galeria.html"
+                  >Galería y reseñas</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="nosotros.html">Nosotros</a>
+              </li>
             </ul>
-          </nav>
+          </div>
         </div>
-      </div>
+      </nav>
     </header>
 
     <main>
@@ -135,5 +164,7 @@
         </div>
       </div>
     </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

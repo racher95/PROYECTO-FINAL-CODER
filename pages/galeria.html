@@ -4,26 +4,58 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Galería y reseñas – Dulce Estrellita</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-    <!-- Header del sitio -->
+    <!-- Header con Navbar Bootstrap -->
     <header class="site-header">
-      <div class="container">
-        <div class="header-content">
-          <a href="../index.html" class="logo">
-            <img src="../img/logo.png" alt="Dulce Estrellita" />
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid px-4">
+          <a class="navbar-brand" href="../index.html">
+            <img
+              src="../img/logo.png"
+              alt="Dulce Estrellita"
+              class="navbar-logo"
+            />
           </a>
-          <nav class="main-nav">
-            <ul>
-              <li><a href="catalogo.html">Catálogo</a></li>
-              <li><a href="promos.html">Promos</a></li>
-              <li><a href="galeria.html">Galería y reseñas</a></li>
-              <li><a href="nosotros.html">Nosotros</a></li>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="catalogo.html">Catálogo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="promos.html">Promos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="galeria.html"
+                  >Galería y reseñas</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="nosotros.html">Nosotros</a>
+              </li>
             </ul>
-          </nav>
+          </div>
         </div>
-      </div>
+      </nav>
     </header>
 
     <main>
@@ -34,51 +66,161 @@
             Algunos de nuestros trabajos y lo que dicen nuestros clientes
           </p>
 
-          <!-- Galería de fotos (pendiente agregar más imágenes) -->
-          <article>
+          <!-- Galería de fotos con CSS Grid -->
+          <div class="gallery-section">
             <h2>Nuestros Trabajos</h2>
-            <p>
-              Aquí irán las fotos de nuestros productos terminados. Galería
-              completa próximamente.
-            </p>
-          </article>
+            <div class="gallery-grid">
+              
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="../img/producto-1.jpeg" data-title="Chocotorta Clásica">
+                <img src="../img/producto-1.jpeg" alt="Chocotorta Clásica" />
+                <div class="gallery-overlay">
+                  <span class="gallery-icon">🔍</span>
+                </div>
+              </div>
 
-          <!-- Reseñas de clientes -->
-          <h2>Lo que dicen nuestros clientes:</h2>
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="../img/producto-2.jpg" data-title="Torta de Chocolate">
+                <img src="../img/producto-2.jpg" alt="Torta de Chocolate" />
+                <div class="gallery-overlay">
+                  <span class="gallery-icon">🔍</span>
+                </div>
+              </div>
 
-          <div class="review">
-            <p>
-              "Increíble la calidad y el sabor. Pedí una torta para el
-              cumpleaños de mi hijo y fue un éxito total. Todos preguntaron
-              dónde la había comprado."
-            </p>
-            <p class="small">— María González</p>
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="../img/catalogoprueba1.jpg" data-title="Brownies Artesanales">
+                <img src="../img/catalogoprueba1.jpg" alt="Brownies Artesanales" />
+                <div class="gallery-overlay">
+                  <span class="gallery-icon">🔍</span>
+                </div>
+              </div>
+
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="../img/catalogoprueba2.png" data-title="Mini Tortas">
+                <img src="../img/catalogoprueba2.png" alt="Mini Tortas" />
+                <div class="gallery-overlay">
+                  <span class="gallery-icon">🔍</span>
+                </div>
+              </div>
+
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="../img/rojel.jpg" data-title="Postre Especial">
+                <img src="../img/rojel.jpg" alt="Postre Especial" />
+                <div class="gallery-overlay">
+                  <span class="gallery-icon">🔍</span>
+                </div>
+              </div>
+
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="../img/kathy1.jpeg" data-title="Kathy Creando">
+                <img src="../img/kathy1.jpeg" alt="Kathy Creando" />
+                <div class="gallery-overlay">
+                  <span class="gallery-icon">🔍</span>
+                </div>
+              </div>
+
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="../img/hero.png" data-title="Variedad de Cupcakes">
+                <img src="../img/hero.png" alt="Variedad de Cupcakes" />
+                <div class="gallery-overlay">
+                  <span class="gallery-icon">🔍</span>
+                </div>
+              </div>
+
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="../img/usericon.jpg" data-title="Cliente Satisfecho">
+                <img src="../img/usericon.jpg" alt="Cliente Satisfecho" />
+                <div class="gallery-overlay">
+                  <span class="gallery-icon">🔍</span>
+                </div>
+              </div>
+
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="../img/producto-1.jpeg" data-title="Torta Personalizada">
+                <img src="../img/producto-1.jpeg" alt="Torta Personalizada" />
+                <div class="gallery-overlay">
+                  <span class="gallery-icon">🔍</span>
+                </div>
+              </div>
+
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="../img/producto-2.jpg" data-title="Dulce Estrellita Special">
+                <img src="../img/producto-2.jpg" alt="Dulce Estrellita Special" />
+                <div class="gallery-overlay">
+                  <span class="gallery-icon">🔍</span>
+                </div>
+              </div>
+
+            </div>
           </div>
 
-          <div class="review">
-            <p>
-              "Kathy es una artista. La torta no solo estaba deliciosa sino que
-              era una obra de arte. Definitivamente volvería a encargar."
-            </p>
-            <p class="small">— Carlos Rodríguez</p>
+          <!-- Modal Bootstrap para vista completa -->
+          <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="imageModalLabel">Imagen</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                  <img id="modalImage" src="" alt="" class="img-fluid rounded" />
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="review">
-            <p>
-              "Excelente atención y productos frescos. Los brownies estaban
-              perfectos y llegaron en tiempo y forma."
-            </p>
-            <p class="small">— Ana Martínez</p>
+          <!-- Testimonios con Bootstrap Cards -->
+          <div class="testimonials-section">
+            <h2>Lo que dicen nuestros clientes</h2>
+            <div class="row g-4">
+              
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 testimonial-card-bootstrap">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                      <img src="../img/usericon.jpg" alt="María González" class="rounded-circle me-3" width="50" height="50">
+                      <div>
+                        <h6 class="card-title mb-0">María González</h6>
+                        <small class="text-muted">Cliente</small>
+                      </div>
+                    </div>
+                    <p class="card-text">"Increíble la calidad y el sabor. Pedí una torta para el cumpleaños de mi hijo y fue un éxito total. Todos preguntaron dónde la había comprado."</p>
+                    <div class="text-warning">
+                      ⭐⭐⭐⭐⭐
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 testimonial-card-bootstrap">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                      <img src="../img/usericon.jpg" alt="Carlos Rodríguez" class="rounded-circle me-3" width="50" height="50">
+                      <div>
+                        <h6 class="card-title mb-0">Carlos Rodríguez</h6>
+                        <small class="text-muted">Cliente</small>
+                      </div>
+                    </div>
+                    <p class="card-text">"Kathy es una artista. La torta no solo estaba deliciosa sino que era una obra de arte. Definitivamente volvería a encargar."</p>
+                    <div class="text-warning">
+                      ⭐⭐⭐⭐⭐
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 testimonial-card-bootstrap">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                      <img src="../img/usericon.jpg" alt="Ana Martínez" class="rounded-circle me-3" width="50" height="50">
+                      <div>
+                        <h6 class="card-title mb-0">Ana Martínez</h6>
+                        <small class="text-muted">Cliente</small>
+                      </div>
+                    </div>
+                    <p class="card-text">"Excelente atención y productos frescos. Los brownies estaban perfectos y llegaron en tiempo y forma."</p>
+                    <div class="text-warning">
+                      ⭐⭐⭐⭐⭐
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
 
-          <div class="review">
-            <p>
-              "Por fin encontré alguien que hace postres sin gluten que
-              realmente saben bien. Mi hija celíaca pudo disfrutar su cumpleaños
-              como cualquier niño."
-            </p>
-            <p class="small">— Roberto Silva</p>
-          </div>
         </div>
       </section>
     </main>
@@ -124,5 +266,28 @@
         </div>
       </div>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script para modal de galería -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const modalImage = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('imageModalLabel');
+        
+        galleryItems.forEach(item => {
+          item.addEventListener('click', function() {
+            const imageSrc = this.getAttribute('data-image');
+            const imageTitle = this.getAttribute('data-title');
+            
+            modalImage.src = imageSrc;
+            modalImage.alt = imageTitle;
+            modalTitle.textContent = imageTitle;
+          });
+        });
+      });
+    </script>
   </body>
 </html>
