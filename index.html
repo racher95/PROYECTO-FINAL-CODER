@@ -202,7 +202,9 @@
       <section class="testimonials-section">
         <div class="container">
           <h2>Mira lo que dicen quienes ya probaron nuestras delicias</h2>
-          <div class="testimonials-grid">
+
+          <!-- Grid para desktop (se oculta en móviles) -->
+          <div class="testimonials-grid d-none d-md-flex">
             <div class="testimonial-card">
               <img
                 src="img/usericon.jpg"
@@ -235,6 +237,105 @@
                 "Kathy es una artista. Cada torta es una obra de arte que sabe
                 increíble. ¡Gracias por todo!"
               </p>
+            </div>
+          </div>
+
+          <!-- Carrusel para móviles (se muestra solo en pantallas pequeñas) -->
+          <div class="d-block d-md-none">
+            <div
+              id="testimonialsCarousel"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#testimonialsCarousel"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Testimonio 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#testimonialsCarousel"
+                  data-bs-slide-to="1"
+                  aria-label="Testimonio 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#testimonialsCarousel"
+                  data-bs-slide-to="2"
+                  aria-label="Testimonio 3"
+                ></button>
+              </div>
+
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="testimonial-card-mobile">
+                    <img
+                      src="img/usericon.jpg"
+                      alt="Cliente satisfecho"
+                      class="client-photo"
+                    />
+                    <p>
+                      "Las tortas de Dulce Estrellita son increíbles. Siempre
+                      frescos y deliciosos. ¡Muy recomendado!"
+                    </p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="testimonial-card-mobile">
+                    <img
+                      src="img/usericon.jpg"
+                      alt="Cliente satisfecho"
+                      class="client-photo"
+                    />
+                    <p>
+                      "Excelente servicio y productos de calidad. Mis invitados
+                      quedaron encantados con el cheesecake."
+                    </p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="testimonial-card-mobile">
+                    <img
+                      src="img/usericon.jpg"
+                      alt="Cliente satisfecho"
+                      class="client-photo"
+                    />
+                    <p>
+                      "Kathy es una artista. Cada torta es una obra de arte que
+                      sabe increíble. ¡Gracias por todo!"
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#testimonialsCarousel"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#testimonialsCarousel"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Siguiente</span>
+              </button>
             </div>
           </div>
         </div>
