@@ -1,0 +1,60 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Icon must end with two newlines
+Icon
+
+# Files that might appear in the root of a volume
+.VolumeIcon.icns
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+
+# Visual Studio Code
+.vscode/
+.history/
+
+# IDEs and editors
+*.sublime-workspace
+*.sublime-project
+.idea/
+
+# Build outputs
+dist/
+build/
+
+# Logs
+*.log
+
+# OS generated
+.DS_Store?
+
+# Images/cache
+.cache/
+
+# Others
+.vagrant/
+.env.local
+.env.*.local
+
+# Ignore system files from OneDrive syncing (if any)
+~$*
+*.~*
