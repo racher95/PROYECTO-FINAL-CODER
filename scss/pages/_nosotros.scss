@@ -1,0 +1,33 @@
+// ================================================
+// PAGINA NOSOTROS - DULCE ESTRELLITA
+// ================================================
+// Estilos especificos de la pagina sobre nosotros
+
+@use "../abstracts/variables" as v;
+
+.nosotros-image {
+  text-align: center;
+  margin: 40px 0;
+
+  img {
+    max-width: 500px;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+}
+
+.nosotros-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.texto-nosotros {
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+}

@@ -1,0 +1,39 @@
+// ================================================
+// RESET CSS - DULCE ESTRELLITA
+// ================================================
+// Reset basico para normalizar estilos entre navegadores
+
+@use "../abstracts/variables" as v;
+
+// Reset universal
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Estilos base del body con CSS Grid
+body {
+  font-family: v.$font-primary;
+  line-height: 1.6;
+  color: v.$texto-oscuro;
+  background-color: v.$blanco;
+
+  // CSS Grid Layout para estructura general
+  // Header fijo, main flexible, footer al final
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  scroll-padding-top: v.$navbar-height;
+}
+
+// Areas del grid principal
+main {
+  grid-area: main;
+  width: 100%;
+  padding-top: v.$navbar-height; // Compensa el navbar fijo
+}

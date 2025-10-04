@@ -1,0 +1,166 @@
+// ================================================
+// PAGINA PROMOS - DULCE ESTRELLITA
+// ================================================
+// Estilos especificos de la pagina de promociones
+// Usa @each para generar gradientes de fondo
+
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "sass:map";
+
+.promos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.promo-card {
+  border-radius: 20px;
+  overflow: hidden;
+  @include m.transition(transform);
+  transition-property: transform, box-shadow;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// Usar @each para generar los gradientes de cada tarjeta
+// Esto evita repetir codigo y facilita agregar mas tarjetas
+@each $number, $colors in v.$promo-gradients {
+  .promo-card:nth-child(#{$number}) {
+    background: linear-gradient(
+      135deg,
+      map.get($colors, from),
+      map.get($colors, to)
+    );
+  }
+}
+
+.promo-image {
+  position: relative;
+  padding: 25px 20px 20px 20px;
+  text-align: center;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    @include m.transition(transform);
+  }
+}
+
+.promo-card:hover .promo-image img {
+  transform: scale(1.05);
+}
+
+.promo-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.95);
+  color: v.$texto-oscuro;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.promo-content {
+  background: v.$blanco;
+  padding: 25px 20px;
+  text-align: center;
+  border-radius: 20px 20px 0 0;
+  margin-top: -10px;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h2 {
+    color: v.$texto-oscuro;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 12px 20px;
+    font-weight: 700;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    @include m.transition;
+    margin: 0;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(110, 57, 183, 0.4);
+    }
+  }
+}
+
+.promo-description {
+  color: v.$texto-gris;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 15px;
+  opacity: 0.8;
+}
+
+.promo-price {
+  margin-bottom: 15px;
+}
+
+.old-price {
+  display: block;
+  color: v.$texto-gris;
+  text-decoration: line-through;
+  font-size: 0.85rem;
+  margin-bottom: 3px;
+  opacity: 0.7;
+}
+
+.new-price {
+  color: v.$violeta-principal;
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1;
+  display: block;
+}
+
+.promo-validity {
+  color: v.$rosa;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}

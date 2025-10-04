@@ -1,0 +1,49 @@
+// ================================================
+// PLACEHOLDERS - DULCE ESTRELLITA
+// ================================================
+// Placeholders para usar con @extend
+// Evitan repetir codigo y mejoran la escalabilidad
+
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+// Placeholder para tarjetas con sombra y hover
+// Reutilizable en producto-card, testimonial-card, etc
+%card-base {
+  @include m.card-shadow;
+  @include m.transition(transform);
+  border-radius: 15px;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-5px);
+    @include m.card-shadow(true);
+  }
+}
+
+// Placeholder para centrado con flexbox
+// Usado en elementos que necesitan estar centrados
+%flex-centered {
+  @include m.flex-center;
+}
+
+// Placeholder para tarjetas de testimonios
+// Reutilizable en testimonial-card y testimonial-card-mobile
+%testimonial-base {
+  background-color: v.$blanco;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  @include m.transition(transform);
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  p {
+    font-style: italic;
+    color: v.$texto-gris;
+    margin: 0;
+  }
+}

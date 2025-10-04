@@ -1,0 +1,58 @@
+// ================================================
+// MIXINS SASS - DULCE ESTRELLITA
+// ================================================
+// Mixins reutilizables para el proyecto
+
+@use "variables" as v;
+@use "sass:map";
+
+// Mixin para media queries responsive
+// Uso: @include responsive(mobile) { ... }
+// Valores aceptados: mobile, tablet, tablet-medium, desktop
+@mixin responsive($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: map.get(v.$breakpoints, "mobile")) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {
+    @media (max-width: map.get(v.$breakpoints, "tablet")) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet-medium {
+    @media (max-width: map.get(v.$breakpoints, "tablet")) and (min-width: map.get(v.$breakpoints, "tablet-medium")) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media (min-width: map.get(v.$breakpoints, "desktop")) {
+      @content;
+    }
+  }
+}
+
+// Mixin para centrar elementos con flexbox
+// Simplifica el uso repetido de flex center
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Mixin para transiciones suaves
+// Permite configurar propiedad y duracion
+// Uso: @include transition(transform, 0.3s)
+@mixin transition($property: all, $duration: 0.3s) {
+  transition: $property $duration ease;
+}
+
+// Mixin para sombras de tarjetas
+// Estandariza las sombras del sitio
+@mixin card-shadow($hover: false) {
+  @if $hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  } @else {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+}

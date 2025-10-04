@@ -1,0 +1,107 @@
+// ================================================
+// CARRUSEL - DULCE ESTRELLITA
+// ================================================
+// Personalizacion del carrusel de Bootstrap
+
+@use "../abstracts/variables" as v;
+
+// Seccion del carrusel de promos
+.promo-section {
+  padding: 60px 0;
+  background: linear-gradient(135deg, v.$gris-claro, v.$blanco);
+  min-height: 400px;
+  position: relative;
+}
+
+// Imagen del carrusel
+.carousel-img {
+  height: 320px;
+  object-fit: cover;
+  border-radius: 15px;
+  filter: brightness(0.7);
+}
+
+// Caption del carrusel
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  padding: 25px;
+  bottom: 25px;
+  max-width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  h5 {
+    color: v.$rosa;
+    font-weight: 700;
+    margin-bottom: 12px;
+    font-size: 1.6rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  p {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+  }
+}
+
+// Indicadores del carrusel
+.carousel-indicators {
+  bottom: -60px;
+
+  button {
+    background-color: v.$violeta-principal;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 0 8px;
+  }
+}
+
+// Controles de navegacion del carrusel
+.carousel-control-prev,
+.carousel-control-next {
+  width: 8%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: v.$violeta-principal;
+  border-radius: 50%;
+  padding: 20px;
+  width: 60px;
+  height: 60px;
+}
+
+// Controles especificos para carrusel de testimonios
+#testimonialsCarousel {
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 8%;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 50px;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: v.$violeta-principal;
+    border-radius: 50%;
+    padding: 15px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .carousel-indicators {
+    bottom: -40px;
+
+    button {
+      background-color: v.$violeta-principal;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin: 0 6px;
+    }
+  }
+}

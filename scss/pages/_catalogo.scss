@@ -1,0 +1,58 @@
+// ================================================
+// PAGINA CATALOGO - DULCE ESTRELLITA
+// ================================================
+// Estilos especificos de la pagina de catalogo
+
+@use "../abstracts/variables" as v;
+
+// Contenedor de paginas basicas
+.section {
+  padding: 40px 0;
+}
+
+.wrap {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 25px;
+
+  article {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    h2 {
+      color: v.$violeta-principal;
+      text-align: left;
+      margin-bottom: 15px;
+    }
+
+    img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 10px;
+      margin: 15px 0;
+    }
+  }
+}
+
+// Alerta de tortas personalizadas
+.tortas-personalizadas {
+  background: linear-gradient(135deg, v.$celeste, v.$rosa);
+  border: none;
+  border-radius: 15px;
+  padding: 30px;
+  margin-top: 40px;
+
+  .alert-heading {
+    color: v.$violeta-oscuro;
+    font-weight: 700;
+  }
+}
+
+.precio-especial {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: v.$violeta-oscuro;
+}

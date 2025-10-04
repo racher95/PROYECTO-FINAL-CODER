@@ -1,0 +1,55 @@
+// ================================================
+// MAIN SCSS - DULCE ESTRELLITA
+// ================================================
+// Proyecto Final CoderHouse - Kevin Camara
+// Archivo principal que importa todos los parciales
+
+
+// ================================================
+// 1. ABSTRACTS
+// ================================================
+// Variables y mixins deben cargarse primero
+// para que esten disponibles en todos los archivos
+@use "abstracts/variables";
+@use "abstracts/mixins";
+
+// ================================================
+// 2. BASE
+// ================================================
+// Estilos base y reset CSS
+@use "base/reset";
+@use "base/typography";
+@use "base/placeholders";
+
+// ================================================
+// 3. LAYOUT
+// ================================================
+// Estructura general del sitio
+@use "layout/header";
+@use "layout/footer";
+
+// ================================================
+// 4. COMPONENTS
+// ================================================
+// Componentes reutilizables
+@use "components/buttons";
+@use "components/cards";
+@use "components/carousel";
+
+// ================================================
+// 5. PAGES
+// ================================================
+// Estilos especificos por pagina
+@use "pages/home";
+@use "pages/catalogo";
+@use "pages/galeria";
+@use "pages/nosotros";
+@use "pages/promos";
+
+// ================================================
+// 6. RESPONSIVE
+// ================================================
+// IMPORTANTE: Los media queries van al final
+// para que sobrescriban correctamente los estilos base
+// Todos los breakpoints estan centralizados aqui
+@use "responsive/mediaqueries";

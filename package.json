@@ -1,0 +1,23 @@
+{
+  "name": "dulce-estrellita",
+  "version": "1.0.0",
+  "description": "Proyecto Final CoderHouse - Sitio web de reposteria",
+  "main": "index.js",
+  "scripts": {
+    "sass:watch": "sass --watch scss/main.scss:css/style.css --style expanded",
+    "sass:build": "sass scss/main.scss:css/style.css --style compressed",
+    "sass:dev": "sass scss/main.scss:css/style.css --style expanded"
+  },
+  "keywords": [
+    "sass",
+    "scss",
+    "css",
+    "web",
+    "coderhouse"
+  ],
+  "author": "Kevin Camara",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.69.5"
+  }
+}

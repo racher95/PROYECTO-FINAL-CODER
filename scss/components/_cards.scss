@@ -1,0 +1,116 @@
+// ================================================
+// TARJETAS - DULCE ESTRELLITA
+// ================================================
+// Estilos de tarjetas (productos y testimonios)
+
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "../base/placeholders" as *;
+
+// Tarjetas de productos (catalogo)
+.producto-card {
+  @extend %card-base; // Hereda estilos base de tarjeta
+  border: none;
+  @include m.transition(all);
+
+  // Imagen del producto
+  .card-img-top {
+    height: 250px;
+    object-fit: cover;
+    @include m.transition(transform);
+  }
+
+  // Hover en la imagen
+  &:hover .card-img-top {
+    transform: scale(1.05);
+  }
+
+  // Contenido de la tarjeta
+  .card-body {
+    padding: 25px;
+    background: white;
+  }
+
+  .card-title {
+    color: v.$violeta-principal;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .card-text {
+    color: v.$texto-gris;
+    line-height: 1.6;
+  }
+
+  .precio {
+    color: v.$violeta-oscuro;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+}
+
+// Tarjeta de testimonios (version escritorio)
+.testimonial-card {
+  @extend %testimonial-base; // Hereda estilos base de testimonios
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  padding: 20px;
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+// Foto del cliente en testimonios
+.client-photo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 0 auto 12px auto;
+  display: block;
+  object-fit: cover;
+  border: 3px solid v.$violeta-principal;
+}
+
+// Tarjeta de testimonio con Bootstrap
+.testimonial-card-bootstrap {
+  border: none;
+  @include m.card-shadow;
+  @include m.transition(transform);
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .card-body {
+    background: linear-gradient(135deg, v.$gris-claro, v.$blanco);
+  }
+}
+
+// Tarjeta de testimonio para carrusel movil
+.testimonial-card-mobile {
+  @extend %testimonial-base; // Hereda estilos base de testimonios
+  padding: 30px 20px;
+  margin: 20px 10px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .client-photo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 0 auto 15px auto;
+    display: block;
+    object-fit: cover;
+    border: 3px solid v.$violeta-principal;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
