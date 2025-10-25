@@ -2,7 +2,7 @@
 
 ## 📋 Descripción del Proyecto
 
-**Dulce Estrellita** es el sitio web oficial de una repostería artesanal ubicada en Montevideo, Uruguay. El proyecto forma parte del curso de Desarrollo Web de **Coder House** y representa una pre-entrega del proyecto final.
+**Dulce Estrellita** es el sitio web oficial de una repostería artesanal ubicada en Montevideo, Uruguay. El proyecto forma parte del curso de Desarrollo Web de **Coder House**. El sitio está diseñado para mostrar los productos y servicios de la repostería, con un enfoque en la experiencia del usuario y el diseño responsive.
 
 ## 🎯 Sobre el Negocio
 
@@ -47,7 +47,8 @@ Dulce Estrellita es dirigido por **Kathy**, una repostera de 26 años con tradic
 
 ## 🚀 Ver el Sitio en Vivo
 
-**🌐 URL de GitHub Pages:** [https://racher95.github.io/PROYECTO-FINAL-CODER/](https://racher95.github.io/PROYECTO-FINAL-CODER/)
+**🌐 URL de GitHub Pages:** [https://racher95.github.io/PROYECTO-FINAL-CODER/](https://racher95.github.io/PROYECTO-FINAL-CODER/)  
+**🖥️ Deploy en Netlify:** [https://dulceestrellita.netlify.app/](https://dulceestrellita.netlify.app/)
 
 ## 📂 Estructura del Proyecto
 

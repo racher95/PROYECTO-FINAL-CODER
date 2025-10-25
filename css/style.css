@@ -99,6 +99,25 @@ a:hover {
   margin: 0;
 }
 
+.u-section-space {
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+
+.u-section-space--soft {
+  padding-block: clamp(1.5rem, 4vw, 3rem);
+}
+
+.text-body {
+  font-size: clamp(1rem, 1.6vw, 1.1rem);
+  line-height: 1.7;
+  color: #666666;
+}
+
+.u-heading-lead {
+  margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
 .site-header {
   grid-area: header;
   background: linear-gradient(135deg, #6e39b7, #e78bd6, #79b6ff);
@@ -355,7 +374,6 @@ a:hover {
 }
 
 .promo-section {
-  padding: 60px 0;
   background: linear-gradient(135deg, #f5f5f5, #ffffff);
   min-height: 400px;
   position: relative;
@@ -474,7 +492,6 @@ a:hover {
 }
 
 .custom-section {
-  padding: 50px 0;
   background-color: #ffffff;
 }
 
@@ -514,9 +531,8 @@ a:hover {
 }
 
 .testimonials-section {
-  padding: 50px 0;
   background-color: #f5f5f5;
-  margin-top: 50px;
+  margin-top: clamp(1.5rem, 4vw, 3rem);
 }
 
 .testimonials-grid {
@@ -525,10 +541,6 @@ a:hover {
   margin-top: 30px;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-.section {
-  padding: 40px 0;
 }
 
 .wrap {
@@ -560,7 +572,7 @@ a:hover {
   border: none;
   border-radius: 15px;
   padding: 30px;
-  margin-top: 40px;
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
 }
 .tortas-personalizadas .alert-heading {
   color: #4e2a8a;
@@ -626,7 +638,7 @@ a:hover {
 
 .nosotros-image {
   text-align: center;
-  margin: 40px 0;
+  margin: 20px 0 10px;
 }
 .nosotros-image img {
   max-width: 500px;
@@ -634,6 +646,17 @@ a:hover {
   height: 250px;
   object-fit: cover;
   border-radius: 15px;
+}
+
+.nosotros-hero {
+  padding: clamp(1.5rem, 4vw, 3rem) 0 2rem;
+}
+.nosotros-hero .page-title {
+  margin-bottom: 25px;
+}
+
+.nosotros-history {
+  padding: 12px 0 36px;
 }
 
 .nosotros-content {

@@ -5,11 +5,6 @@
 
 @use "../abstracts/variables" as v;
 
-// Contenedor de paginas basicas
-.section {
-  padding: 40px 0;
-}
-
 .wrap {
   max-width: 1250px;
   margin: 0 auto;
@@ -43,7 +38,7 @@
   border: none;
   border-radius: 15px;
   padding: 30px;
-  margin-top: 40px;
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
 
   .alert-heading {
     color: v.$violeta-oscuro;

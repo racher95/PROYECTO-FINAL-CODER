@@ -1,0 +1,30 @@
+// ================================================
+// UTILIDADES GLOBALES - DULCE ESTRELLITA
+// ================================================
+// Clases auxiliares para unificar espaciados
+// y escala tipográfica entre todas las páginas.
+
+@use "../abstracts/variables" as v;
+
+// Espaciado base para secciones principales
+.u-section-space {
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+
+// Variante con menor padding para bloques secundarios
+.u-section-space--soft {
+  padding-block: clamp(1.5rem, 4vw, 3rem);
+}
+
+// Texto base reutilizable con lectura cómoda
+.text-body {
+  font-size: clamp(1rem, 1.6vw, 1.1rem);
+  line-height: 1.7;
+  color: v.$texto-gris;
+}
+
+// Margen uniforme debajo de subtítulos antes del primer párrafo
+.u-heading-lead {
+  margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
+}

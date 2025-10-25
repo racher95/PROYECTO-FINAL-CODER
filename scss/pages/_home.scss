@@ -28,7 +28,7 @@
   bottom: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; // recupera la separación original entre título, logo y botón
   align-items: center;
   padding: 20px 0;
   text-align: center;
@@ -44,7 +44,6 @@
 
 // Seccion de personalizacion
 .custom-section {
-  padding: 50px 0;
   background-color: v.$blanco;
 }
 
@@ -88,9 +87,8 @@
 
 // Seccion de testimonios
 .testimonials-section {
-  padding: 50px 0;
   background-color: v.$gris-claro;
-  margin-top: 50px;
+  margin-top: clamp(1.5rem, 4vw, 3rem);
 }
 
 .testimonials-grid {

@@ -7,7 +7,7 @@
 
 .nosotros-image {
   text-align: center;
-  margin: 40px 0;
+  margin: 20px 0 10px;
 
   img {
     max-width: 500px;
@@ -16,6 +16,18 @@
     object-fit: cover;
     border-radius: 15px;
   }
+}
+
+.nosotros-hero {
+  padding: clamp(1.5rem, 4vw, 3rem) 0 2rem;
+
+  .page-title {
+    margin-bottom: 25px;
+  }
+}
+
+.nosotros-history {
+  padding: 12px 0 36px;
 }
 
 .nosotros-content {
