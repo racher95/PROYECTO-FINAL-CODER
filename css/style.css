@@ -465,7 +465,7 @@ a:hover {
 }
 
 .hero-background {
-  background: linear-gradient(rgba(110, 57, 183, 0.1), rgba(110, 57, 183, 0.5)), url("../img/hero.png") center/cover no-repeat;
+  background: linear-gradient(rgba(110, 57, 183, 0.1), rgba(110, 57, 183, 0.5)), url("../img/hero.jpg") center/cover no-repeat;
   min-height: 50vh;
   position: relative;
   padding-top: 60px;

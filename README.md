@@ -58,7 +58,7 @@ Dulce Estrellita es dirigido por **Kathy**, una repostera de 26 años con tradic
 │   └── style.css           # Estilos principales (812 líneas)
 ├── img/                    # Recursos multimedia
 │   ├── logo.png
-│   ├── hero.png
+│   ├── hero.jpg
 │   ├── producto-*.jpeg
 │   └── ...
 ├── pages/                  # Páginas secundarias
