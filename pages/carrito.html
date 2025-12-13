@@ -3,19 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>
-      Promociones dulces - Dulce Estrellita | Ofertas y combos especiales
-    </title>
+    <title>Carrito - Dulce Estrellita | Tu pedido</title>
     <meta
       name="description"
-      content="Descubrí combos de cumpleaños, 2x1 y descuentos temporales en tortas, cupcakes y brownies de Dulce Estrellita. Reservá tu promo antes de que se agote."
+      content="Revisa tu carrito de compras en Dulce Estrellita. Tortas, postres y promociones artesanales en Montevideo."
     />
     <meta name="author" content="Dulce Estrellita" />
     <meta name="theme-color" content="#6e39b7" />
-    <link
-      rel="canonical"
-      href="https://dulceestrellita.netlify.app/pages/promos.html"
-    />
     <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="../img/favicon.png" sizes="32x32" type="image/png" />
     <link rel="apple-touch-icon" href="../img/faviconios.png" sizes="180x180" />
@@ -24,37 +18,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../css/style.css" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="es_LA" />
-    <meta
-      property="og:url"
-      content="https://dulceestrellita.netlify.app/pages/promos.html"
-    />
-    <meta
-      property="og:title"
-      content="Promociones dulces - Dulce Estrellita | Ofertas y combos especiales"
-    />
-    <meta
-      property="og:description"
-      content="Descubrí combos de cumpleaños, 2x1 y descuentos temporales en tortas, cupcakes y brownies de Dulce Estrellita. Reservá tu promo antes de que se agote."
-    />
-    <meta
-      property="og:image"
-      content="https://dulceestrellita.netlify.app/img/og-hero.jpg"
-    />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Promociones dulces - Dulce Estrellita | Ofertas y combos especiales"
-    />
-    <meta
-      name="twitter:description"
-      content="Descubrí combos de cumpleaños, 2x1 y descuentos temporales en tortas, cupcakes y brownies de Dulce Estrellita. Reservá tu promo antes de que se agote."
-    />
-    <meta
-      name="twitter:image"
-      content="https://dulceestrellita.netlify.app/img/og-hero.jpg"
-    />
   </head>
   <body>
     <!-- Header con Navbar Bootstrap -->
@@ -87,7 +50,7 @@
                 <a class="nav-link" href="catalogo.html">Catálogo</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="promos.html">Promos</a>
+                <a class="nav-link" href="promos.html">Promos</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="galeria.html">Galería y reseñas</a>
@@ -96,7 +59,7 @@
                 <a class="nav-link" href="nosotros.html">Nosotros</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="carrito.html">Carrito</a>
+                <a class="nav-link active" href="carrito.html">Carrito</a>
               </li>
             </ul>
           </div>
@@ -106,12 +69,65 @@
 
     <main>
       <section class="section u-section-space">
-        <div class="wrap">
-          <h1 class="page-title">Promociones Especiales</h1>
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center mb-5">
+              <h1 class="page-title">Tu Carrito</h1>
+              <p class="lead text-muted u-heading-lead">
+                Revisa tu pedido antes de continuar
+              </p>
+            </div>
+          </div>
 
-          <!-- Grid de promociones con CSS Grid -->
-          <div id="promosGrid" class="promos-grid">
-            <!-- Cards inyectadas por JS -->
+          <!-- Mensaje carrito vacío -->
+          <div id="carritoVacio" class="text-center d-none">
+            <p class="lead">Tu carrito está vacío</p>
+            <a href="catalogo.html" class="btn btn-primary">Ver catálogo</a>
+          </div>
+
+          <!-- Contenido del carrito -->
+          <div id="carritoContenido">
+            <div class="table-responsive">
+              <table class="table align-middle">
+                <thead>
+                  <tr>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Subtotal</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody id="carritoItems">
+                  <!-- Items inyectados por JS -->
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Total y acciones -->
+            <div class="row mt-4">
+              <div class="col-md-6">
+                <button id="btnVaciar" class="btn btn-outline-danger">
+                  Vaciar carrito
+                </button>
+              </div>
+              <div class="col-md-6 text-end">
+                <p class="h4 mb-3">Total: <span id="carritoTotal">$0</span></p>
+                <button id="btnCheckout" class="btn btn-success btn-lg">
+                  Proceder con la compra
+                </button>
+              </div>
+            </div>
+
+            <!-- Mensaje Próximamente -->
+            <div
+              id="checkoutMsg"
+              class="alert alert-info mt-4 d-none"
+              role="alert"
+            >
+              <strong>Próximamente:</strong> El checkout está en desarrollo.
+              ¡Gracias por tu paciencia!
+            </div>
           </div>
         </div>
       </section>
@@ -160,9 +176,8 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="../scripts/data.js" defer></script>
     <script src="../scripts/cart.js" defer></script>
-    <script src="../scripts/promos.js" defer></script>
+    <script src="../scripts/carrito.js" defer></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   </body>
