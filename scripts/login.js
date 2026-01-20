@@ -17,18 +17,21 @@ function initLogin() {
       const input = document.getElementById(targetId);
       const iconEye = btn.querySelector(".icon-eye");
       const iconEyeOff = btn.querySelector(".icon-eye-off");
-      
+
       if (input) {
         const isPassword = input.type === "password";
         input.type = isPassword ? "text" : "password";
-        
+
         // Toggle iconos
         if (iconEye && iconEyeOff) {
           iconEye.classList.toggle("d-none", isPassword);
           iconEyeOff.classList.toggle("d-none", !isPassword);
         }
-        
-        btn.setAttribute("aria-label", isPassword ? "Ocultar contraseña" : "Mostrar contraseña");
+
+        btn.setAttribute(
+          "aria-label",
+          isPassword ? "Ocultar contraseña" : "Mostrar contraseña"
+        );
       }
     });
   });
@@ -45,7 +48,7 @@ function initLogin() {
         title: "Campos requeridos",
         text: "Por favor completa todos los campos.",
         icon: "warning",
-        confirmButtonColor: "#6e39b7"
+        confirmButtonColor: "#6e39b7",
       });
       return;
     }
@@ -59,7 +62,7 @@ function initLogin() {
         icon: "success",
         confirmButtonColor: "#6e39b7",
         timer: 2000,
-        showConfirmButton: false
+        showConfirmButton: false,
       }).then(() => {
         window.location.href = "catalogo.html";
       });
@@ -68,7 +71,7 @@ function initLogin() {
         title: "Error",
         text: result.message,
         icon: "error",
-        confirmButtonColor: "#6e39b7"
+        confirmButtonColor: "#6e39b7",
       });
     }
   });
@@ -87,7 +90,7 @@ function initLogin() {
         title: "Campos requeridos",
         text: "Por favor completa todos los campos.",
         icon: "warning",
-        confirmButtonColor: "#6e39b7"
+        confirmButtonColor: "#6e39b7",
       });
       return;
     }
@@ -97,7 +100,7 @@ function initLogin() {
         title: "Contraseña muy corta",
         text: "La contraseña debe tener al menos 6 caracteres.",
         icon: "warning",
-        confirmButtonColor: "#6e39b7"
+        confirmButtonColor: "#6e39b7",
       });
       return;
     }
@@ -107,7 +110,7 @@ function initLogin() {
         title: "Contraseñas no coinciden",
         text: "Por favor verifica que ambas contraseñas sean iguales.",
         icon: "warning",
-        confirmButtonColor: "#6e39b7"
+        confirmButtonColor: "#6e39b7",
       });
       return;
     }
@@ -117,14 +120,14 @@ function initLogin() {
     if (result.success) {
       // Auto-login después de registrar
       await loginUser(email, password);
-      
+
       Swal.fire({
         title: "¡Cuenta creada!",
         text: `Bienvenido/a ${nombre}`,
         icon: "success",
         confirmButtonColor: "#6e39b7",
         timer: 2000,
-        showConfirmButton: false
+        showConfirmButton: false,
       }).then(() => {
         window.location.href = "catalogo.html";
       });
@@ -133,7 +136,7 @@ function initLogin() {
         title: "Error",
         text: result.message,
         icon: "error",
-        confirmButtonColor: "#6e39b7"
+        confirmButtonColor: "#6e39b7",
       });
     }
   });

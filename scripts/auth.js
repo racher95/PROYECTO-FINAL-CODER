@@ -31,7 +31,7 @@ function saveSession(user) {
   const sessionData = {
     email: user.email,
     nombre: user.nombre,
-    loggedAt: new Date().toISOString()
+    loggedAt: new Date().toISOString(),
   };
   localStorage.setItem("session", JSON.stringify(sessionData));
   notifyAuthChange();
@@ -59,7 +59,7 @@ async function registerUser(nombre, email, password) {
     nombre: nombre.trim(),
     email: email.toLowerCase().trim(),
     password: hashedPassword,
-    createdAt: new Date().toISOString()
+    createdAt: new Date().toISOString(),
   };
 
   users.push(newUser);
@@ -71,7 +71,9 @@ async function registerUser(nombre, email, password) {
 // Login
 async function loginUser(email, password) {
   const users = getUsers();
-  const user = users.find((u) => u.email.toLowerCase() === email.toLowerCase().trim());
+  const user = users.find(
+    (u) => u.email.toLowerCase() === email.toLowerCase().trim()
+  );
 
   if (!user) {
     return { success: false, message: "Usuario no encontrado" };

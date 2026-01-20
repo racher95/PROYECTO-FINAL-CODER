@@ -9,7 +9,7 @@ let productosData = [];
 // Estado de filtros
 let filtrosActuales = {
   busqueda: "",
-  orden: "default"
+  orden: "default",
 };
 
 async function cargarProductos() {

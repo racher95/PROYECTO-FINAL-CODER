@@ -110,7 +110,7 @@ function initCarrito() {
       confirmButtonColor: "#6e39b7",
       cancelButtonColor: "#6c757d",
       confirmButtonText: "Sí, vaciar",
-      cancelButtonText: "Cancelar"
+      cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
         clearCart();
@@ -122,7 +122,7 @@ function initCarrito() {
           title: "Carrito vacío",
           text: "El carrito ha sido vaciado correctamente.",
           icon: "success",
-          confirmButtonColor: "#6e39b7"
+          confirmButtonColor: "#6e39b7",
         });
       }
     });
@@ -130,7 +130,9 @@ function initCarrito() {
 
   // Abrir formulario de checkout
   btnCheckout.addEventListener("click", () => {
-    const bsCollapse = new bootstrap.Collapse(checkoutCollapse, { toggle: true });
+    const bsCollapse = new bootstrap.Collapse(checkoutCollapse, {
+      toggle: true,
+    });
   });
 
   // Enviar formulario de checkout
@@ -151,7 +153,7 @@ function initCarrito() {
         title: "Dirección requerida",
         text: "Por favor ingresa tu dirección para el delivery.",
         icon: "warning",
-        confirmButtonColor: "#6e39b7"
+        confirmButtonColor: "#6e39b7",
       });
       return;
     }
@@ -159,7 +161,7 @@ function initCarrito() {
     // Crear orden
     const orderId = generateOrderId();
     const session = typeof getSession === "function" ? getSession() : null;
-    
+
     const order = {
       id: orderId,
       fecha: new Date().toISOString(),
@@ -171,10 +173,10 @@ function initCarrito() {
         direccion: direccion,
         pago: document.getElementById("checkoutPago").value,
         fechaDeseada: document.getElementById("checkoutFecha").value,
-        notas: document.getElementById("checkoutNotas").value.trim()
+        notas: document.getElementById("checkoutNotas").value.trim(),
       },
       items: getCart(),
-      total: cartTotal()
+      total: cartTotal(),
     };
 
     // Guardar orden y vaciar carrito
@@ -191,7 +193,7 @@ function initCarrito() {
       title: "¡Pedido confirmado!",
       text: `Tu número de pedido es ${orderId}. Te contactaremos pronto.`,
       icon: "success",
-      confirmButtonColor: "#6e39b7"
+      confirmButtonColor: "#6e39b7",
     });
   });
 }

@@ -18,11 +18,13 @@ function showToast(mensaje, tipo = "success") {
     success: "alert-success",
     error: "alert-danger",
     warning: "alert-warning",
-    info: "alert-info"
+    info: "alert-info",
   };
 
   toast.innerHTML = `
-    <div class="alert ${alertClass[tipo] || alertClass.success} alert-dismissible fade show" role="alert">
+    <div class="alert ${
+      alertClass[tipo] || alertClass.success
+    } alert-dismissible fade show" role="alert">
       ${mensaje}
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
     </div>
@@ -33,7 +35,9 @@ function showToast(mensaje, tipo = "success") {
     const alertEl = toast.querySelector(".alert");
     if (alertEl) {
       alertEl.classList.remove("show");
-      setTimeout(() => { toast.innerHTML = ""; }, 150);
+      setTimeout(() => {
+        toast.innerHTML = "";
+      }, 150);
     }
   }, 3000);
 }
