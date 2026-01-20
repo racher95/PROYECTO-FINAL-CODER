@@ -146,6 +146,13 @@
     height: 65px;
   }
 
+  // Barra de búsqueda en móvil
+  .navbar-search {
+    max-width: 100%;
+    margin: 10px 0;
+    order: 10; // Mover al final del menú
+  }
+
   // Hero section
   .hero-section,
   .hero-background {

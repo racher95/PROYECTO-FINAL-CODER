@@ -86,6 +86,65 @@
   }
 }
 
+// Barra de búsqueda en navbar
+.navbar-search {
+  max-width: 160px;
+  
+  .input-group {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  
+  .input-group > .form-control,
+  .input-group > .btn {
+    height: 28px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  
+  .form-control {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-right: none !important;
+    color: v.$blanco !important;
+    font-size: 0.75rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    border-radius: 15px 0 0 15px !important;
+    
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+    
+    &:focus {
+      background: rgba(255, 255, 255, 0.25) !important;
+      border-color: rgba(255, 255, 255, 0.5) !important;
+      border-right: none !important;
+      box-shadow: none !important;
+    }
+  }
+  
+  .btn-outline-light {
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-left: none !important;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 0 15px 15px 0 !important;
+    display: flex;
+    align-items: center;
+    
+    &:hover,
+    &:focus {
+      background: rgba(255, 255, 255, 0.2) !important;
+    }
+    
+    svg {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}
+
 // Boton toggle para menu movil
 .navbar-toggler {
   border: none;

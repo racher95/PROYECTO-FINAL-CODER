@@ -114,3 +114,30 @@
     line-height: 1.6;
   }
 }
+
+// Imagen miniatura del carrito
+.cart-item-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+// Input de cantidad en carrito
+.cart-qty-input {
+  width: 70px;
+}
+
+// Icono de usuario en navbar
+.nav-user-icon {
+  vertical-align: -3px;
+}
+
+// Toast de notificaciones
+.app-toast {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  z-index: 1055;
+  min-width: 280px;
+}

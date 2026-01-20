@@ -1,15 +1,31 @@
 // Carrito de compras - Dulce Estrellita
-// Gestión de carrito guest con localStorage
+// Gestión de carrito con localStorage (por usuario o guest)
 
-const CART_KEY = "carrito";
+const CART_KEY_GUEST = "carrito_guest";
+
+// Obtener la key del carrito según sesión
+function getCartKey() {
+  const session = localStorage.getItem("session");
+  if (session) {
+    const { email } = JSON.parse(session);
+    return `carrito_${email}`;
+  }
+  return CART_KEY_GUEST;
+}
+
+// Dispara evento para notificar cambios en el carrito
+function notifyCartChange() {
+  window.dispatchEvent(new CustomEvent("cart:updated"));
+}
 
 function getCart() {
-  const data = localStorage.getItem(CART_KEY);
+  const data = localStorage.getItem(getCartKey());
   return data ? JSON.parse(data) : [];
 }
 
 function saveCart(cart) {
-  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+  localStorage.setItem(getCartKey(), JSON.stringify(cart));
+  notifyCartChange();
 }
 
 function addToCart(item) {
@@ -51,7 +67,32 @@ function updateQty(id, qty) {
 }
 
 function clearCart() {
-  localStorage.removeItem(CART_KEY);
+  localStorage.removeItem(getCartKey());
+  notifyCartChange();
+}
+
+// Transferir carrito de guest a usuario logueado
+function transferGuestCart(userEmail) {
+  const guestCart = JSON.parse(localStorage.getItem(CART_KEY_GUEST)) || [];
+  if (guestCart.length === 0) return;
+
+  const userCartKey = `carrito_${userEmail}`;
+  const userCart = JSON.parse(localStorage.getItem(userCartKey)) || [];
+
+  // Merge: agregar items de guest al carrito del usuario
+  guestCart.forEach((guestItem) => {
+    const existing = userCart.find((p) => p.id === guestItem.id);
+    if (existing) {
+      existing.cantidad += guestItem.cantidad;
+    } else {
+      userCart.push(guestItem);
+    }
+  });
+
+  // Guardar carrito del usuario y vaciar guest
+  localStorage.setItem(userCartKey, JSON.stringify(userCart));
+  localStorage.removeItem(CART_KEY_GUEST);
+  notifyCartChange();
 }
 
 function cartCount() {

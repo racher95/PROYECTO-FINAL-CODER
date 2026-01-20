@@ -1,0 +1,26 @@
+[
+  {
+    "id": "prod-1",
+    "titulo": "Chocotorta Clásica",
+    "descripcion": "Nuestra famosa chocotorta con galletas de chocolate y dulce de leche casero. Un clásico que nunca falla.",
+    "imagen": "img/gm6.jpg",
+    "alt": "Chocotorta clásica",
+    "precio": 650
+  },
+  {
+    "id": "prod-2",
+    "titulo": "Cheesecake Frutos Rojos",
+    "descripcion": "Delicioso cheesecake cremoso con una mezcla de frutos rojos frescos. Perfecto para ocasiones especiales.",
+    "imagen": "img/catalogoprueba1.jpg",
+    "alt": "Cheesecake de frutos rojos",
+    "precio": 750
+  },
+  {
+    "id": "prod-3",
+    "titulo": "Brownies Artesanales",
+    "descripcion": "Brownies húmedos y deliciosos, hechos con chocolate premium. Disponibles con nueces o sin nueces.",
+    "imagen": "img/promo02.jpg",
+    "alt": "Brownies artesanales",
+    "precio": 350
+  }
+]

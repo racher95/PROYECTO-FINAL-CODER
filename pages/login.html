@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Iniciar sesión - Dulce Estrellita</title>
+    <meta
+      name="description"
+      content="Inicia sesión o crea una cuenta en Dulce Estrellita para gestionar tus pedidos."
+    />
+    <meta name="author" content="Dulce Estrellita" />
+    <meta name="theme-color" content="#6e39b7" />
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../img/favicon.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="../img/faviconios.png" sizes="180x180" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- Header con Navbar Bootstrap -->
+    <header class="site-header">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid px-4">
+          <a class="navbar-brand" href="../index.html">
+            <img
+              src="../img/logo.png"
+              alt="Dulce Estrellita"
+              class="navbar-logo"
+            />
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Barra de búsqueda -->
+            <form class="d-flex me-auto ms-lg-4 navbar-search" id="navSearchForm" role="search">
+              <div class="input-group">
+                <input type="text" class="form-control" id="navSearchInput" placeholder="Buscar..." aria-label="Buscar">
+                <button class="btn btn-outline-light" type="submit">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+                </button>
+              </div>
+            </form>
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="catalogo.html">Catálogo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="promos.html">Promos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="galeria.html">Galería y reseñas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="nosotros.html">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="carrito.html">Carrito</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section u-section-space">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+              <div class="card shadow-sm">
+                <div class="card-body p-4">
+                  <!-- Tabs para Login / Registro -->
+                  <ul class="nav nav-tabs mb-4" id="authTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="nav-link active"
+                        id="login-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#loginPane"
+                        type="button"
+                        role="tab"
+                      >
+                        Iniciar sesión
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="nav-link"
+                        id="register-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#registerPane"
+                        type="button"
+                        role="tab"
+                      >
+                        Crear cuenta
+                      </button>
+                    </li>
+                  </ul>
+
+                  <div class="tab-content" id="authTabsContent">
+                    <!-- Login Form -->
+                    <div
+                      class="tab-pane fade show active"
+                      id="loginPane"
+                      role="tabpanel"
+                    >
+                      <form id="loginForm" novalidate>
+                        <div class="mb-3">
+                          <label for="loginEmail" class="form-label">Email</label>
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="loginEmail"
+                            value="maria@ejemplo.com"
+                            required
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <label for="loginPassword" class="form-label">Contraseña</label>
+                          <div class="position-relative">
+                            <input
+                              type="password"
+                              class="form-control pe-5"
+                              id="loginPassword"
+                              value="123456"
+                              required
+                            />
+                            <button
+                              class="btn-toggle-password js-toggle-password"
+                              type="button"
+                              data-target="loginPassword"
+                              aria-label="Mostrar contraseña"
+                            >
+                              <svg class="icon-eye" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                              <svg class="icon-eye-off d-none" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+                            </button>
+                          </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 btn-lg">
+                          Ingresar
+                        </button>
+                      </form>
+                      <p class="text-muted small mt-3 text-center">
+                        Datos de prueba precargados para evaluación
+                      </p>
+                    </div>
+
+                    <!-- Register Form -->
+                    <div class="tab-pane fade" id="registerPane" role="tabpanel">
+                      <form id="registerForm" novalidate>
+                        <div class="mb-3">
+                          <label for="registerNombre" class="form-label">Nombre completo</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="registerNombre"
+                            value="María García"
+                            required
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <label for="registerEmail" class="form-label">Email</label>
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="registerEmail"
+                            value="maria@ejemplo.com"
+                            required
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <label for="registerPassword" class="form-label">Contraseña</label>
+                          <div class="position-relative">
+                            <input
+                              type="password"
+                              class="form-control pe-5"
+                              id="registerPassword"
+                              minlength="6"
+                              value="123456"
+                              required
+                            />
+                            <button
+                              class="btn-toggle-password js-toggle-password"
+                              type="button"
+                              data-target="registerPassword"
+                              aria-label="Mostrar contraseña"
+                            >
+                              <svg class="icon-eye" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                              <svg class="icon-eye-off d-none" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+                            </button>
+                          </div>
+                          <div class="form-text">Mínimo 6 caracteres</div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="registerPassword2" class="form-label">Confirmar contraseña</label>
+                          <div class="position-relative">
+                            <input
+                              type="password"
+                              class="form-control pe-5"
+                              id="registerPassword2"
+                              value="123456"
+                              required
+                            />
+                            <button
+                              class="btn-toggle-password js-toggle-password"
+                              type="button"
+                              data-target="registerPassword2"
+                              aria-label="Mostrar contraseña"
+                            >
+                              <svg class="icon-eye" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                              <svg class="icon-eye-off d-none" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+                            </button>
+                          </div>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100 btn-lg">
+                          Crear cuenta
+                        </button>
+                      </form>
+                      <p class="text-muted small mt-3 text-center">
+                        Datos de prueba precargados para evaluación
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>Contacto</h3>
+            <p>WhatsApp: +598 99 123 456</p>
+            <p>Email: hola@dulceestrellita.uy</p>
+            <p>Ubicación: Montevideo, Uruguay</p>
+            <p>Repostería artesanal por encargo</p>
+            <p>Atención 24/7</p>
+          </div>
+
+          <div class="footer-column">
+            <h3>Seguinos en redes:</h3>
+            <p>
+              <a
+                href="https://www.instagram.com/dulceestrellita.uy/"
+                target="_blank"
+                >Instagram</a
+              >
+            </p>
+            <p><a href="#" target="_blank">TikTok</a></p>
+          </div>
+
+          <div class="footer-column">
+            <h3>Newsletter</h3>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Tu email" required />
+              <button type="submit" class="btn btn-newsletter">
+                Suscribete!
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2025 Dulce Estrellita - Todos los derechos reservados</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Scripts -->
+    <script src="../scripts/cart.js" defer></script>
+    <script src="../scripts/auth.js" defer></script>
+    <script src="../scripts/nav.js" defer></script>
+    <script src="../scripts/search.js" defer></script>
+    <script src="../scripts/login.js" defer></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

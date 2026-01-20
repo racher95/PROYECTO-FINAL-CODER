@@ -1,15 +1,38 @@
 // Promos dinámicas - Dulce Estrellita
 
+// Ruta base para imágenes (ajuste según ubicación de la página)
+const BASE_PATH = window.location.pathname.includes("/pages/") ? "../" : "";
+
+// Variable global para promos cargadas
+let promosData = [];
+
+async function cargarPromos() {
+  try {
+    const response = await fetch(`${BASE_PATH}data/promos.json`);
+    if (!response.ok) throw new Error("Error al cargar promos");
+    promosData = await response.json();
+    return promosData;
+  } catch (error) {
+    console.error("Error cargando promos:", error);
+    return [];
+  }
+}
+
 function renderPromos(lista) {
   const container = document.getElementById("promosGrid");
   if (!container) return;
+
+  if (lista.length === 0) {
+    container.innerHTML = `<div class="text-center"><p class="text-muted">No se encontraron promociones.</p></div>`;
+    return;
+  }
 
   container.innerHTML = lista
     .map(
       (promo) => `
     <div class="promo-card">
       <div class="promo-image">
-        <img src="${promo.imagen}" alt="${promo.alt}" />
+        <img src="${BASE_PATH}${promo.imagen}" alt="${promo.alt}" />
         <div class="promo-badge">${promo.badge}</div>
       </div>
       <div class="promo-content">
@@ -34,34 +57,8 @@ function renderPromos(lista) {
     .join("");
 }
 
-function mostrarFeedbackPromo(mensaje) {
-  let feedback = document.getElementById("cartFeedback");
-
-  if (!feedback) {
-    feedback = document.createElement("div");
-    feedback.id = "cartFeedback";
-    feedback.className =
-      "alert alert-success alert-dismissible fade show position-fixed";
-    feedback.style.cssText =
-      "top: 100px; right: 20px; z-index: 1050; min-width: 250px;";
-    feedback.innerHTML = `
-      <span id="feedbackMsg"></span>
-      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    `;
-    document.body.appendChild(feedback);
-  }
-
-  document.getElementById("feedbackMsg").textContent = mensaje;
-  feedback.classList.remove("d-none");
-  feedback.classList.add("show");
-
-  setTimeout(() => {
-    feedback.classList.add("d-none");
-  }, 3000);
-}
-
 function initPromos() {
-  renderPromos(promos);
+  renderPromos(promosData);
 
   const container = document.getElementById("promosGrid");
   if (!container) return;
@@ -71,18 +68,22 @@ function initPromos() {
     if (!btn) return;
 
     const id = btn.dataset.id;
-    const promo = promos.find((p) => p.id === id);
+    const promo = promosData.find((p) => p.id === id);
 
     if (promo) {
       addToCart({
         id: promo.id,
         titulo: promo.titulo,
         precio: promo.precioNuevo,
-        imagen: promo.imagen,
+        imagen: BASE_PATH + promo.imagen,
       });
-      mostrarFeedbackPromo(`${promo.titulo} agregado al carrito`);
+      showToast(`${promo.titulo} agregado al carrito`);
     }
   });
 }
 
-document.addEventListener("DOMContentLoaded", initPromos);
+// Inicialización asíncrona
+document.addEventListener("DOMContentLoaded", async () => {
+  await cargarPromos();
+  initPromos();
+});

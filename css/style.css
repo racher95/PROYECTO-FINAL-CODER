@@ -184,6 +184,55 @@ a:hover {
   font-weight: 600;
 }
 
+.navbar-search {
+  max-width: 160px;
+}
+.navbar-search .input-group {
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.navbar-search .input-group > .form-control,
+.navbar-search .input-group > .btn {
+  height: 28px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.navbar-search .form-control {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-right: none !important;
+  color: #ffffff !important;
+  font-size: 0.75rem;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+  border-radius: 15px 0 0 15px !important;
+}
+.navbar-search .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.navbar-search .form-control:focus {
+  background: rgba(255, 255, 255, 0.25) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  border-right: none !important;
+  box-shadow: none !important;
+}
+.navbar-search .btn-outline-light {
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-left: none !important;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 0 15px 15px 0 !important;
+  display: flex;
+  align-items: center;
+}
+.navbar-search .btn-outline-light:hover, .navbar-search .btn-outline-light:focus {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+.navbar-search .btn-outline-light svg {
+  width: 12px;
+  height: 12px;
+}
+
 .navbar-toggler {
   border: none;
   background-color: rgba(255, 255, 255, 0.2);
@@ -287,6 +336,31 @@ a:hover {
   background-color: #4e2a8a;
 }
 
+.btn-toggle-password {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  text-decoration: none;
+  line-height: 1;
+  padding: 0.375rem 0.75rem;
+  background: transparent;
+  border: none;
+  color: #666666;
+  cursor: pointer;
+}
+.btn-toggle-password:hover {
+  color: #6e39b7;
+}
+.btn-toggle-password:focus {
+  outline: none;
+  box-shadow: none;
+}
+.btn-toggle-password svg {
+  display: block;
+}
+
 .producto-card {
   border: none;
   transition: all 0.3s ease;
@@ -371,6 +445,29 @@ a:hover {
 .testimonial-card-mobile p {
   font-size: 1rem;
   line-height: 1.6;
+}
+
+.cart-item-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cart-qty-input {
+  width: 70px;
+}
+
+.nav-user-icon {
+  vertical-align: -3px;
+}
+
+.app-toast {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  z-index: 1055;
+  min-width: 280px;
 }
 
 .promo-section {
@@ -918,6 +1015,11 @@ a:hover {
   .navbar-brand .navbar-logo {
     height: 65px;
   }
+  .navbar-search {
+    max-width: 100%;
+    margin: 10px 0;
+    order: 10;
+  }
   .hero-section,
   .hero-background {
     min-height: 40vh;
@@ -1031,5 +1133,3 @@ a:hover {
     font-size: 1rem;
   }
 }
-
-/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "promo-1",
+    "badge": "2x1",
+    "titulo": "Chocotorta Clásica",
+    "descripcion": "Lleva 2 porciones y paga solo 1. ¡Oferta limitada!",
+    "precioViejo": 400,
+    "precioNuevo": 200,
+    "validez": "Válido hasta el domingo",
+    "imagen": "img/gm6.jpg",
+    "alt": "Chocotorta Clásica en promoción"
+  },
+  {
+    "id": "promo-2",
+    "badge": "COMBO",
+    "titulo": "Combo Cumpleaños",
+    "descripcion": "Torta + 12 cupcakes + velas de regalo",
+    "precioViejo": 1500,
+    "precioNuevo": 1200,
+    "validez": "Válido para pedidos con 48hs de anticipación",
+    "imagen": "img/promo01.jpg",
+    "alt": "Combo Cumpleaños"
+  },
+  {
+    "id": "promo-3",
+    "badge": "30% OFF",
+    "titulo": "Brownies Premium",
+    "descripcion": "Caja de 6 brownies artesanales con descuento especial",
+    "precioViejo": 600,
+    "precioNuevo": 420,
+    "validez": "Válido solo esta semana",
+    "imagen": "img/promo02.jpg",
+    "alt": "Brownies Premium"
+  },
+  {
+    "id": "promo-4",
+    "badge": "NUEVO",
+    "titulo": "Merienda Dulce",
+    "descripcion": "Selección de mini tortas y alfajores para compartir",
+    "precioViejo": null,
+    "precioNuevo": 800,
+    "validez": "Válido para grupos de 4 o más personas",
+    "imagen": "img/promo03.jpg",
+    "alt": "Merienda Dulce"
+  }
+]
